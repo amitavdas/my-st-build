@@ -2,6 +2,7 @@ added "bold is not bright" patch
 added "blinking cursor" patch
 added "copyurl" patch
 added "terminfo" patch
+added "undercurl" patch
 
 Modified fg & bg color
 Modified Cursor fg color
