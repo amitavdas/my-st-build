@@ -2808,6 +2808,8 @@ void copyurl(const Arg *arg) {
 
 // keyboard_select_patch_start
 
+#define bline XK_0
+
 void set_notifmode(int type, KeySym ksym) {
 	static char *lib[] = { " MOVE ", " SEL  "};
 	static Glyph *g, *deb, *fin;
@@ -2894,7 +2896,7 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 			if ( ksym == XK_Escape )    ptarget = 0;
 			return 0;
 		}
-		else if ( ksym == XK_BackSpace ) {
+		else if ( ksym == XK_0 ) {
 			if ( !ptarget )     return 0;
 			term.line[term.bot][ptarget--].u = ' ';
 		}
@@ -2909,7 +2911,7 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 			term.line[term.bot][ptarget].u = target[ptarget - 1];
 		}
 
-		if ( ksym != XK_BackSpace )
+		if ( ksym != XK_0 )
 			search(selectsearch_mode, &target[0], ptarget, sens, type, &cu);
 
 		term.dirty[term.bot] = 1;
@@ -2957,7 +2959,7 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 		if ( ptarget )
 			search(selectsearch_mode, &target[0], ptarget, (ksym == XK_k) ? -1 : 1, type, &cu);
 		break;
-	case XK_o :
+	case XK_0 :
 		term.c.x = 0;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
@@ -2975,7 +2977,7 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 		break;
 	case XK_g :
 	case XK_G :
-		term.c.y = (ksym == XK_G ) ? 0 : cu.y;
+		term.c.y = (ksym == XK_g ) ? 0 : cu.y;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
 	case XK_exclam :
