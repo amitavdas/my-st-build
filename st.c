@@ -2808,7 +2808,7 @@ void copyurl(const Arg *arg) {
 
 // keyboard_select_patch_start
 
-#define bline XK_0
+#define bline XK_0      // (b)eginning of line
 
 void set_notifmode(int type, KeySym ksym) {
 	static char *lib[] = { " MOVE ", " SEL  "};
@@ -2972,7 +2972,7 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
 	case XK_semicolon :
-		term.c.x = cu.x, term.c.y = cu.y;
+		term.c.x = 0, term.c.y = cu.y;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
 	case XK_g :
