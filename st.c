@@ -2975,10 +2975,6 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 		term.c.x = 0, term.c.y = cu.y;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
-	case XK_z :
-		term.c.x = term.col-1, term.c.y = term.row-1;
-		select_or_drawcursor(selectsearch_mode, type);
-		break;
 	case XK_g :
 	case XK_G :
 		term.c.y = (ksym == XK_g ) ? 0 : cu.y;

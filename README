@@ -13,8 +13,7 @@ added "keyboard_select" patch
       0, $         : move cursor to the beginning/end of the line
       g, G         : move cursor to the beginning/end of the column
       apostrophe,
-      semicolon    : move cursor to the top/bottom left corner of the screen
-      z            : move cursor to the bottom right corner of the screen
+      semicolon    : move cursor to the top/bottom left corner of text
       /, ?         : activate input mode and search up/down
       K, k         : repeat last search, up/down
       v            : toggle move/selection mode
