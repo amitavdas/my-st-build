@@ -2957,7 +2957,7 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 		if ( ptarget )
 			search(selectsearch_mode, &target[0], ptarget, (ksym == XK_k) ? -1 : 1, type, &cu);
 		break;
-	case XK_caret :
+	case XK_o :
 		term.c.x = 0;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
