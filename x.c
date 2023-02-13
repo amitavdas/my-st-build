@@ -2539,7 +2539,7 @@ run:
 	xinit(cols, rows);
 	xsetenv();
 	selinit();
-	int totally_ignore_1 = chdir(opt_dir);
+	(void) chdir(opt_dir);
 	run();
 
 	return 0;
