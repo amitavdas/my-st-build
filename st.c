@@ -2955,9 +2955,9 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 	case XK_k :
 	case XK_K :
 		if ( ptarget )
-			search(selectsearch_mode, &target[0], ptarget, (ksym == XK_n) ? -1 : 1, type, &cu);
+			search(selectsearch_mode, &target[0], ptarget, (ksym == XK_k) ? -1 : 1, type, &cu);
 		break;
-	case XK_0 :
+	case XK_caret :
 		term.c.x = 0;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
@@ -2998,9 +2998,9 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 			quant = (quant * 10) + (ksym ^ XK_KP_0);
 			return 0;
 		}
-		else if ( ksym == XK_t || ksym == XK_h )
+		else if ( ksym == XK_k || ksym == XK_h )
 			i = ksym & 1;
-		else if ( ksym == XK_s || ksym == XK_n )
+		else if ( ksym == XK_j || ksym == XK_l )
 			i = ((ksym & 6) | 4) >> 1;
 		else if ( (XK_Home & ksym) != XK_Home || (i = (ksym ^ XK_Home) - 1) > 3 )
 			break;
