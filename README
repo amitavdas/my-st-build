@@ -8,7 +8,7 @@ added "undercurl" patch
 added "workingdir" patch
 added "keyboard_select" patch
       They keybindings have been heavily customized
-      h, n, t, s   : move cursor left/down/up/right (also with arrow keys)
+      h, t, n, s   : move cursor left/up/down/right (also with arrow keys)
       !, _, *      : move cursor to the middle of the line/column/screen
       caret, $ : move cursor to the beginning/end of the line
       g, G         : move cursor to the beginning/end of the column
