@@ -2998,10 +2998,10 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 			quant = (quant * 10) + (ksym ^ XK_KP_0);
 			return 0;
 		}
-		else if ( ksym == XK_k || ksym == XK_h )
-			i = ksym & 1;
-		else if ( ksym == XK_j || ksym == XK_l )
-			i = ((ksym & 6) | 4) >> 1;
+		else if ( ksym == XK_t || ksym == XK_h )
+			i = ( ksym & 4 ) >> 2;
+		else if ( ksym == XK_n || ksym == XK_s )
+			i = ((ksym & 15) >> 2) | 2;
 		else if ( (XK_Home & ksym) != XK_Home || (i = (ksym ^ XK_Home) - 1) > 3 )
 			break;
 
