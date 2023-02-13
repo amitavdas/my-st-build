@@ -2539,7 +2539,14 @@ run:
 	xinit(cols, rows);
 	xsetenv();
 	selinit();
+
+        // This should not be ignored, but I am too lazy
+        // https://gcc.gnu.org/bugzilla/show_bug.cgi?id=25509
+        // "not checking the result is either a security problem or always a bug"
+        // So I am just holding the value in a variable and ignoring it
+        // :D
 	int ignorable_variable_1 = chdir(opt_dir);
+
 	run();
 
 	return 0;
