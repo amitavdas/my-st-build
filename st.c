@@ -2954,10 +2954,10 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 		select_or_drawcursor(selectsearch_mode = 0, type);
 		in_use = quant = 0;
 		return MODE_KBDSELECT;
-	case XK_k :
 	case XK_K :
+	case XK_k :
 		if ( ptarget )
-			search(selectsearch_mode, &target[0], ptarget, (ksym == XK_k) ? -1 : 1, type, &cu);
+			search(selectsearch_mode, &target[0], ptarget, (ksym == XK_K) ? -1 : 1, type, &cu);
 		break;
 	case XK_0 :
 		term.c.x = 0;
@@ -2975,19 +2975,22 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 		term.c.x = 0, term.c.y = cu.y;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
+	case XK_z :
+		term.c.x = term.col-1, term.c.y = term.row-1;
+		select_or_drawcursor(selectsearch_mode, type);
+		break;
 	case XK_g :
 	case XK_G :
 		term.c.y = (ksym == XK_g ) ? 0 : cu.y;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
-	case XK_exclam :
+	case XK_l :
 		term.c.x = term.col >> 1;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
-	case XK_asterisk :
-	case XK_KP_Multiply :
+	case XK_m :
 		term.c.x = term.col >> 1;
-	case XK_underscore :
+	case XK_c :
 		term.c.y = cu.y >> 1;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
