@@ -5,6 +5,7 @@ added "terminfo" patch
 added "undercurl" patch
       Remember : you have to run `tic -sx st.info`
       else undercurl will not work
+added "workingdir" patch
 
 Modified fg & bg color
 Modified Cursor fg color
