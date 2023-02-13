@@ -2923,14 +2923,14 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 		cu.x = term.c.x, cu.y = term.c.y;
 		set_notifmode(0, ksym);
 		return MODE_KBDSELECT;
-	case XK_s :
+	case XK_v :
 		if ( selectsearch_mode & 1 )
 			selclear();
 		else
 			selstart(term.c.x, term.c.y, 0);
 		set_notifmode(selectsearch_mode ^= 1, ksym);
 		break;
-	case XK_t :
+	case XK_r :
 		selextend(term.c.x, term.c.y, type ^= 3, i = 0);  /* 2 fois */
 		selextend(term.c.x, term.c.y, type, i = 0);
 		break;
@@ -2952,12 +2952,12 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 		select_or_drawcursor(selectsearch_mode = 0, type);
 		in_use = quant = 0;
 		return MODE_KBDSELECT;
-	case XK_n :
-	case XK_N :
+	case XK_k :
+	case XK_K :
 		if ( ptarget )
 			search(selectsearch_mode, &target[0], ptarget, (ksym == XK_n) ? -1 : 1, type, &cu);
 		break;
-	case XK_BackSpace :
+	case XK_0 :
 		term.c.x = 0;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
@@ -2965,16 +2965,16 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 		term.c.x = term.col - 1;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
-	case XK_Home :
+	case XK_apostrophe :
 		term.c.x = 0, term.c.y = 0;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
-	case XK_End :
+	case XK_semicolon :
 		term.c.x = cu.x, term.c.y = cu.y;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
-	case XK_Page_Up :
-	case XK_Page_Down :
+	case XK_g :
+	case XK_G :
 		term.c.y = (ksym == XK_Prior ) ? 0 : cu.y;
 		select_or_drawcursor(selectsearch_mode, type);
 		break;
@@ -2998,9 +2998,9 @@ int trt_kbdselect(KeySym ksym, char *buf, int len) {
 			quant = (quant * 10) + (ksym ^ XK_KP_0);
 			return 0;
 		}
-		else if ( ksym == XK_k || ksym == XK_h )
+		else if ( ksym == XK_t || ksym == XK_h )
 			i = ksym & 1;
-		else if ( ksym == XK_l || ksym == XK_j )
+		else if ( ksym == XK_s || ksym == XK_n )
 			i = ((ksym & 6) | 4) >> 1;
 		else if ( (XK_Home & ksym) != XK_Home || (i = (ksym ^ XK_Home) - 1) > 3 )
 			break;
