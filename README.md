@@ -22,6 +22,7 @@ added "keyboard_select" patch
       Escape       : quit keyboard_select
 added "CSI 22, 23" patch
 added "w3m images" patch
+added "netwmicon"  patch
 
 
 Modified fg & bg color

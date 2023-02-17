@@ -2832,7 +2832,7 @@ void copyurl(const Arg *arg) {
 	}
 }
 
-// copurl_patch_end
+// copyurl_patch_end
 
 // keyboard_select_patch_start
 
