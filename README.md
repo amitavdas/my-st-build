@@ -20,6 +20,7 @@ added "keyboard_select" patch
       r            : toggle regular/rectangular selection type
       Return       : quit keyboard_select, keeping the highlight of the selection
       Escape       : quit keyboard_select
+added "CSI 22, 23" patch
 
 
 Modified fg & bg color
