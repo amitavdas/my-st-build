@@ -21,6 +21,7 @@ added "keyboard_select" patch
       Return       : quit keyboard_select, keeping the highlight of the selection
       Escape       : quit keyboard_select
 added "CSI 22, 23" patch
+added "w3m images" patch
 
 
 Modified fg & bg color
