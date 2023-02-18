@@ -19,6 +19,7 @@ char *argv0;
 #include "arg.h"
 #include "st.h"
 #include "win.h"
+#include "netwmicon.h"
 
 /* types used in config.h */
 typedef struct {
@@ -1239,11 +1240,12 @@ xinit(int cols, int rows)
 	XSetWMProtocols(xw.dpy, xw.win, &xw.wmdeletewin, 1);
 
 	/* use a png-image to set _NET_WM_ICON */
-	FILE* file = fopen(ICON, "r");
+	// FILE* file = fopen(ICON, "r");
+        FILE *file = _binary_icon_png_start;
 	if (file) {
 		/* load image in rgba-format */
 		const gdImagePtr icon_rgba = gdImageCreateFromPng(file);
-		fclose(file);
+		// fclose(file);
 		/* declare icon-variable which will store the image in argb-format */
 		const int width  = gdImageSX(icon_rgba);
 		const int height = gdImageSY(icon_rgba);
