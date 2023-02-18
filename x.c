@@ -1239,12 +1239,10 @@ xinit(int cols, int rows)
 	xw.netwmiconname = XInternAtom(xw.dpy, "_NET_WM_ICON_NAME", False);
 	XSetWMProtocols(xw.dpy, xw.win, &xw.wmdeletewin, 1);
 
-	/* use a png-image to set _NET_WM_ICON */
-	// FILE* file = fopen(ICON, "r");
+	/* use a png-image embed into the executable to set _NET_WM_ICON */
 	if (png_file_Ptr) {
 		/* load image in rgba-format */
 		const gdImagePtr icon_rgba = gdImageCreateFromPngPtr(png_file_size, png_file_Ptr);
-		// fclose(file);
 		/* declare icon-variable which will store the image in argb-format */
 		const int width  = gdImageSX(icon_rgba);
 		const int height = gdImageSY(icon_rgba);
