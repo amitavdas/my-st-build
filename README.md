@@ -44,7 +44,8 @@ added "keyboard_select" patch
 
 added "CSI 22, 23" patch
 
-added "w3m images" patch
+<del>added "w3m images" patch</del>
+      Interferes with "keyboard_select" patch
 
 added "netwmicon"  patch
 
