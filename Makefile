@@ -31,7 +31,7 @@ x.o: arg.h config.h st.h win.h
 
 $(OBJ): config.h config.mk
 
-st: $(OBJ)
+st: $(OBJ) icon.o
 	$(CC) -o $@ $(OBJ) icon.o $(STLDFLAGS)
 
 clean:
