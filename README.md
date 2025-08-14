@@ -1,3 +1,7 @@
+**`st` (simple terminal)** is a lightweight, minimalist terminal emulator from the suckless project, designed for speed, simplicity, and configurability via direct `C` source modification.
+
+The list of modifications are:
+
 added "bold is not bright" patch
 
 added "blinking cursor" patch
